@@ -1,44 +1,54 @@
 # Lang Translation Autocomplete
 
-A VS Code extension that provides autocomplete suggestions for translation keys in `Lang.t()` function calls. It helps developers work more efficiently with translation files by providing instant access to available translation keys and their values.
 
+A VS Code extension built specifically for Clearestate developers that provides intelligent autocomplete suggestions for translation keys in `Lang.t()` function calls. This tool streamlines our multilingual development workflow by providing instant access to available translation keys and their corresponding values.
 
 ## Features
 
-- **Automatic Translation Key Detection**: Automatically detects when you're typing inside a `Lang.t()` function call
-- **Intelligent Suggestions**: Shows translation keys matching your current input
-- **Translation Preview**: Displays the actual translation value alongside each suggestion
-- **Nested Translation Support**: Fully supports nested translation objects with dot notation
-- **Real-time Updates**: Automatically refreshes when translation files change
+- **Translation Key Autocomplete**: Get intelligent suggestions as you type inside `Lang.t()` function calls
+- **Translation Preview**: See the actual translation text alongside each suggestion
+- **Document Links**: Click on translation keys to jump directly to their definition in translation files
+- **Nested Key Navigation**: Fully supports navigation through nested translation objects using dot notation
+- **Real-time Updates**: Suggestions automatically refresh when translation files are modified
+- **Clearestate-specific**: Optimized for our project structure and translation conventions
 
 ## Installation
 
-### Local Installation
+This extension is for internal use at Clearestate and is not published to the VS Code Marketplace.
 
-1. Download the `.vsix` file from the releases page
+### Installation Steps
+
+1. Download the latest `.vsix` file from the [GitHub Releases page](https://github.com/clearestate/clearestate-translations-autocomplete/releases)
 2. Open VS Code
-3. Go to Extensions view (Ctrl+Shift+X / Cmd+Shift+X)
-4. Click "..." at the top of Extensions view and select "Install from VSIX..."
-5. Select the downloaded `.vsix` file
-
-### Via VS Code Marketplace
-
-_Coming soon!_
+3. Go to Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X`)
+4. Click the `...` menu (top-right of Extensions panel)
+5. Select "Install from VSIX..."
+6. Choose the downloaded `.vsix` file
+7. Restart VS Code if prompted
 
 ## Usage
 
-This extension automatically activates when editing JavaScript, TypeScript, Vue, JSX, or TSX files.
+The extension activates automatically when you open JavaScript, TypeScript, Vue, JSX, or TSX files in our project.
 
-1. Begin typing a `Lang.t()` call with quotes
-2. Translation suggestions will appear automatically
-3. Press Tab or Enter to insert the selected translation key
+### Basic Usage
 
-Example:
-```javascript
-// Start typing:
-Lang.t('us
+1. Start typing a translation key inside a `Lang.t()` call:
+   ```javascript
+   Lang.t('')
+2. Browse and select from available translation keys:
+    ```javascript
+    // As you type 'comm', you'll see suggestions like:
+    Lang.t('common.buttons.save')
+    Lang.t('common.errors.required')
+3. Press tab or enter to complete the selection
+### Navigation
 
-// Suggestions might include:
-// user.profile.name
-// user.settings.title
-// user.login.error
+- Quick Navigation: Click on any translation key in your code to jump to its definition in the translation files
+- Hover Preview: Hover over a translation key to see its current value without leaving your file
+
+### Project Structure Requirements
+This extension expects:
+
+- Translation files (JSON format) in a /locales directory
+- Translation objects with dot notation paths (e.g., common.buttons.save)
+- Lang.t() function calls for translation key references
