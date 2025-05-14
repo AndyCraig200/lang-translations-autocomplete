@@ -1,8 +1,8 @@
 import * as vscode from 'vscode';
-import { initializeTranslations, resetCache } from './services/translationService';
-import { registerCompletionProvider } from './providers/completionProvider';
-import { registerLinkProvider } from './providers/linkProvider';
-import { openFileAtPosition } from './services/fileService';
+import { initializeTranslations, resetCache } from '../services/translationService';
+import { registerCompletionProvider } from '../providers/completionProvider';
+import { registerLinkProvider } from '../providers/linkProvider';
+import { openFileAtPosition } from '../services/fileService';
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Activating Translation Autocomplete extension');
